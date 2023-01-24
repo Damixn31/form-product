@@ -15,7 +15,7 @@ import java.util.Map;
 public class RegistroProductoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/index.html").forward(req, res);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req, res);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -44,7 +44,7 @@ public class RegistroProductoServlet extends HttpServlet {
         Map<String, String> errores = new HashMap<>();
 
         if (nombre == null || nombre.isBlank()) {
-            errores.put("nombre", "El nombre es requerido!");
+            errores.put("nombre", "El nombre del producto debe ser requerido!");
         }
         if (fabricante == null || fabricante.isBlank()) {
             errores.put("fabricante", "El fabricante no puede ser vacio!");
@@ -81,7 +81,7 @@ public class RegistroProductoServlet extends HttpServlet {
             }
         } else {
             req.setAttribute("errores", errores);
-            getServletContext().getRequestDispatcher("/index.html").forward(req, res);
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, res);
         }
     }
 }
