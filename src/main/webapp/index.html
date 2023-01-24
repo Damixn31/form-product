@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Productos</title>
+    <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h3>Formalario de Productos</h3>
+
+<form action="/form-product/crear" method="post">
+    <div>
+        <label for="nombre">Producto</label>
+        <div class="row mb-3">
+            <input type="text" name="nombre" id="nombre">
+        </div>
+    </div>
+
+    <div>
+        <label for="precio">Pecio</label>
+        <div class="row mb-3">
+            <input type="number" name="precio" id="precio">
+        </div>
+    </div>
+
+    <div>
+        <label for="fabricante">Fabricante</label>
+        <div class="row mb-3">
+            <input type="text" name="fabricante" id="fabricante">
+        </div>
+
+        <label for="categoria">Categoria</label>
+        <div>
+          <select name="categoria" id="categoria">
+              <option value="">-- seleccionar --</option>
+              <option value="1">Deporte</option>
+              <option value="2">Computacion</option>
+              <option value="3">electrodomesticos</option>
+              <option value="4">Linea Blanca</option>
+              <option value="5">Ropa</option>
+              <option value="6">Tecnologia</option>
+          </select>
+        </div>
+
+        <div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
